@@ -1,0 +1,67 @@
+---
+www.youtube.com-wifi
+---
+Traceroute (6 hops):
+1: 192.168.8.1 (2.027ms)
+2: 10.86.236.1 (13.151ms)
+3: 62.252.72.229 (19.172ms)
+- ASN: AS5089 Virgin Media Limited
+- Location: Belsize Park, United Kingdom
+- Hostname: brnt-core-2a-xe-230-0.network.virginmedia.net
+
+6: 62.254.84.158 (17.213ms)
+- ASN: AS5089 Virgin Media Limited
+- Location: Bethnal Green, United Kingdom
+- Hostname: popl-icdn-1-ae0-0.network.virginmedia.net
+
+Destination: r5---sn-8pgbpohxqp5-ajtl.googlevideo.com (62.252.60.80)
+- ASN: AS5089 Virgin Media Limited
+- Location: Hook, United Kingdom
+- Hostname: cpc3-stme1-3-0-cust80.cdif.cable.ntl.com
+
+---
+www.instagram.com-wifi
+---
+Traceroute (10 hops):
+1: 192.168.8.1 (1.64ms)
+2: 10.86.236.1 (14.018ms)
+3: 62.252.72.221 (11.074ms)
+- ASN: AS5089 Virgin Media Limited
+- Location: Belsize Park, United Kingdom
+- Hostname: brnt-core-2a-xe-220-0.network.virginmedia.net
+
+5: 62.253.174.174 (73.896ms)
+- ASN: AS5089 Virgin Media Limited
+- Location: Hook, United Kingdom
+- Hostname: telw-ic-1-ae0-0.network.virginmedia.net
+
+6: 157.240.65.124 (30.924ms)
+- ASN: AS32934 Facebook, Inc.
+- Location: Menlo Park, United States
+- Hostname: ae13.pr04.lhr3.tfbnw.net
+
+7: 31.13.31.100 (54.533ms)
+- ASN: AS32934 Facebook, Inc.
+- Location: Dublin, Ireland
+- Hostname: po141.asw02.lhr6.tfbnw.net
+
+8: 129.134.50.141 (12.429ms)
+- ASN: AS32934 Facebook, Inc.
+- Location: Menlo Park, United States
+- Hostname: po222.psw01.lhr8.tfbnw.net
+
+9: 173.252.67.35 (160.177ms)
+- ASN: AS32934 Facebook, Inc.
+- Location: Menlo Park, United States
+- Hostname: Unknown
+
+10: 157.240.221.63 (12.455ms)
+- ASN: AS32934 Facebook, Inc.
+- Location: Menlo Park, United States
+- Hostname: instagram-p3-shv-01-lhr8.fbcdn.net
+
+Destination: scontent-lhr8-1.cdninstagram.com (157.240.221.63)
+- ASN: AS32934 Facebook, Inc.
+- Location: Menlo Park, United States
+- Hostname: instagram-p3-shv-01-lhr8.fbcdn.net
+
