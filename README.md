@@ -2,8 +2,6 @@
 
 This code packages the methodology for my [Environmental Technology MSc](https://www.imperial.ac.uk/environmental-policy/msc/) thesis at Imperial College London so that the required traceroute data can be collected from volunteers as easily as possible.
 
-The code is not being maintained past the publication date.
-
 ## Study
 
 ### Goal
@@ -12,14 +10,11 @@ The goal of this study is to estimate the energy intensity of internet data tran
 
 ### Methodology
 
-1. 20 participants who are willing to run a network trace on their personal computer will be recruited from multiple countries.
+1. Participants who are willing to run a network trace on their personal computer will be recruited from multiple countries. We will need at least 10 participants but are not setting an upper limit.
 2. YouTube, Netflix, Facebook Video and Instagram make up a majority of all internet and mobile traffic (Sandvine, [2019](https://www.sandvine.com/global-internet-phenomena-report-2019), [2020](https://www.sandvine.com/download-report-mobile-internet-phenomena-report-2020-sandvine)). These will be used as the destinations for the traceroutes. They use sophisticated mechanisms to ensure the best user experience which means the network destination can change for every user ([Adhikari et al., 2012](https://doi.org/10.1109/INFCOM.2012.6195644); [Juluri et al., 2013](https://ieeexplore.ieee.org/document/6573037); [Loh et al., 2019](https://doi.org/10.1145/3304109.3325819); [Nguyen, Fourmaux & Deleuze, 2019](https://doi.org/10.1007/978-3-030-14413-5_13)). The correct destination will be detected using the open source [`youtube-dl`](https://ytdl-org.github.io/youtube-dl/index.html ) running in simulation mode to reveal the destination URL but not download content. `youtube-dl` supports other sites, not just YouTube.
-3. Traces will be collected using [Scamper](https://www.caida.org/tools/measurement/scamper/), an open source implementation of [Paris traceroute](https://paris-traceroute.net ) designed for academic research ([Luckie, 2010](https://doi.org/10.1145/1879141.1879171)). *Paris traceroute* deals with the inability of `traceroute` to handle load balancing ([Augustin, Friedman & Teixeira, 2007](https://doi.org/10.1109/E2EMON.2007.375313)). Detecting accurate routing is important to record the correct hops. No personal information will be collected; the source IP will be removed to anonymise each trace.
-4. Steps 2-3 have been implemented in a Python wrapper so the participant can run a command to collect the data, once over Wi-Fi and once tethered over 4G. No content is downloaded and a traceroute uses a tiny amount of data, so this will not affect 4G data caps. The participant will return the results to me via e-mail.
-5. Based on the routing, the underlying network architecture will be researched.
-6. Energy will be allocated to devices utilised in each workload scenario.
-
-This will allow workload specific ranges for the energy usage of the internet to be estimated.
+3. Traces will be collected using [Scamper](https://www.caida.org/tools/measurement/scamper/), an open source implementation of [Paris traceroute](https://paris-traceroute.net ) designed for academic research ([Luckie, 2010](https://doi.org/10.1145/1879141.1879171)). *Paris traceroute* deals with the inability of `traceroute` to handle load balancing ([Augustin, Friedman & Teixeira, 2007](https://doi.org/10.1109/E2EMON.2007.375313)). Detecting accurate routing is important to record the correct hops. No personal information will be collected; the source IP will be removed.
+4. Steps 2-3 have been implemented in this Python wrapper so the participant can run a command to collect the data, once over Wi-Fi and once tethered over 4G. No content is downloaded and a traceroute uses a tiny amount of data, so this will not affect 4G data caps. The participant will return the results to via e-mail to david.mytton19@imperial.ac.uk.
+5. This will allow workload specific ranges for the energy usage of the internet to be estimated.
 
 ### Content
 
@@ -44,7 +39,7 @@ The actual results from this study will be published once completed. This README
 ### Setup
 
 1. Extract the release zip file into a new directory. In a terminal, `cd` into that directory.
-2. Execute: `python3 -m venv venv`. macOS may ask you to install the developer tools from Apple. Allow this to run when prompted. Once installed, run this command again.
+2. Execute: `python3 -m venv venv`. macOS may ask you to download the free developer tools from Apple. Allow this to run when prompted then run this command again.
 3. Execute: `source venv/bin/activate`
 4. Execute: `pip3 install -r requirements.txt`
 5. Test the scamper binary: `./scamper`. macOS may block execution. If so, go to System Preferences > Security & Privacy > General then allow access. Execute `./scamper` again to verify.
@@ -65,7 +60,7 @@ Several files prefixed with `results-` will be produced all of which should be r
 
 ### Removal
 
-1. `deactivate`
+1. Execute: `deactivate`
 2. Then delete the folder that was extracted.
 
 ## Notes
