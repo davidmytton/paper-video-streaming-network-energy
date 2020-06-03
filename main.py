@@ -61,7 +61,8 @@ def runTest(video_url):
     print('Discovering CDN URL...', end='', flush=True)
 
     # Get the CDN URL using youtube-dl in simulation mode
-    ydl = youtube_dl.YoutubeDL({'quiet': True})
+    ydl = youtube_dl.YoutubeDL({'quiet': True, 
+                                'nocheckcertificate': True})
 
     with ydl:
         result = ydl.extract_info(
