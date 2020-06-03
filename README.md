@@ -2,6 +2,8 @@
 
 This code packages the methodology for my [Environmental Technology MSc](https://www.imperial.ac.uk/environmental-policy/msc/) thesis at Imperial College London so that the required traceroute data can be collected from volunteers as easily as possible.
 
+The code used in this project can be [found on GitHub](https://github.com/davidmytton/traceroute-collector).
+
 ## Study
 
 ### Goal
