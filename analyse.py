@@ -125,22 +125,26 @@ with open('results.csv', 'w') as csvfile:
                 print('hops...', end='', flush=True)
 
                 # Loop through the hops and query the IP from https://ipinfo.io
-                for hop in trace['hops']:
-                    ip_details = ipinfo_handler.getDetails(hop['addr'])
-                    hop_number = hop['probe_ttl']
+                if 'hops' in trace:
+                    for hop in trace['hops']:
+                        ip_details = ipinfo_handler.getDetails(hop['addr'])
+                        hop_number = hop['probe_ttl']
 
-                    csv_line['Hop ' + str(hop_number) + ' IP'] = hop['addr']
-                    csv_line['Hop ' + str(hop_number) + ' RTT'] = hop['rtt']
+                        csv_line['Hop ' + str(hop_number) + ' IP'] = hop['addr']
+                        csv_line['Hop ' + str(hop_number) + ' RTT'] = hop['rtt']
 
-                    if hasattr(ip_details, 'hostname'):
-                        csv_line['Hop ' + str(hop_number) + ' Hostname'] = ip_details.hostname
-                    else:
-                        csv_line['Hop ' + str(hop_number) + ' Hostname'] = 'Unknown'
+                        if hasattr(ip_details, 'hostname'):
+                            csv_line['Hop ' + str(hop_number) + ' Hostname'] = ip_details.hostname
+                        else:
+                            csv_line['Hop ' + str(hop_number) + ' Hostname'] = 'Unknown'
 
-                    if not hasattr(ip_details, 'bogon'):
-                        csv_line['Hop ' + str(hop_number) + ' ASN'] = ip_details.org
-                        csv_line['Hop ' + str(hop_number) + ' City'] = ip_details.city
-                        csv_line['Hop ' + str(hop_number) + ' Country'] = ip_details.country_name
+                        if not hasattr(ip_details, 'bogon'):
+                            if hasattr(ip_details, 'org'):
+                                csv_line['Hop ' + str(hop_number) + ' ASN'] = ip_details.org
+                            if hasattr(ip_details, 'city'):
+                                csv_line['Hop ' + str(hop_number) + ' City'] = ip_details.city
+                            if hasattr(ip_details, 'country'):
+                                csv_line['Hop ' + str(hop_number) + ' Country'] = ip_details.country_name
 
                 writer.writerow(csv_line)
             print ('done')
