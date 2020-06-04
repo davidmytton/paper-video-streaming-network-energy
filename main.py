@@ -27,6 +27,7 @@ import fileinput
 import json
 import os
 import socket
+import ssl
 import subprocess
 
 # 3rd party
@@ -106,8 +107,6 @@ def runTest(video_url):
                    stdout=subprocess.PIPE)
     print('done')
 
-    print('Redacting source IPs...', end='', flush=True)
-
     # scamper will dump a json object per line
     # We're only interested in the trace line, so skip the others
     for line in fileinput.input([scamper_filename]):
@@ -121,9 +120,16 @@ def runTest(video_url):
             pass
 
     # Get my public IP so it can be redacted from the trace
+    print('Redacting source IPs...', end='', flush=True)
+
+    # Opt out of cert verification
+    # Some participants have very old macOS versions which error when trying
+    # to verify HTTPS certs. Disable the check.
+    # https://www.python.org/dev/peps/pep-0476/
+    context = ssl._create_unverified_context()
     # Source: https://stackoverflow.com/a/9481595
     # jsonip.com is the only one that properly provides the IPv4/IPv6 address
-    my_ip = json.load(urlopen('http://jsonip.com'))['ip']
+    my_ip = json.load(urlopen('https://jsonip.com', context=context))['ip']
 
     # Redact source IP from JSON
     if trace['src'] == my_ip:
@@ -146,16 +152,17 @@ def runTest(video_url):
     except OSError:
         pass
 
+    print('done')
+
+    print('Tidying results...', end='', flush=True)
+
     # How many hops?
     hops = trace['hop_count']
 
     if trace['stop_reason'] == 'GAPLIMIT':
         hops = hops - 5  # If we hit the gap limit (5), subtract from the total
 
-    print('done')
-
     # Write the results.txt basic info
-    print('Tidying results...', end='', flush=True)
     outputfile = open('results.txt', mode='a')
     print('---', file=outputfile)
     print(filename, file=outputfile)
