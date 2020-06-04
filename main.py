@@ -39,7 +39,7 @@ if os.geteuid() != 0:
 
 # Parse args
 parser = argparse.ArgumentParser()
-parser.add_argument('--connection', 
+parser.add_argument('--connection',
                     help='Specify connected over wifi or 4g',
                     required=True)
 parser.add_argument('--ipinfo_key', help='No longer used')
@@ -63,8 +63,8 @@ def runTest(video_url):
     print('Discovering CDN URL...', end='', flush=True)
 
     # Get the CDN URL using youtube-dl in simulation mode
-    ydl = youtube_dl.YoutubeDL({'quiet': True, 
-                                'nocheckcertificate': True}) # Older macOS don't have up to date certs
+    ydl = youtube_dl.YoutubeDL({'quiet': True,
+                                'nocheckcertificate': True})  # Older macOS don't have up to date certs
 
     with ydl:
         result = ydl.extract_info(
@@ -172,6 +172,7 @@ def runTest(video_url):
     print('done')
 
     print('Finished test')
+
 
 runTest('https://www.youtube.com/watch?v=kJQP7kiw5Fk')
 runTest('https://www.instagram.com/p/B5vhf4innBN/')
