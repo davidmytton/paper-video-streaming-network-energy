@@ -53,12 +53,6 @@ The actual results from this study will be published once completed. This README
 3. Disconnect from Wi-Fi. Connect by tethering to your 4G phone.
 4. Execute: `sudo python3 main.py --connection 4g`
 
-#### Optional ipinfo lookup
-
-The collector has the ability to do print the traceroute results in a human readable format with hostname, ASN and IP location lookups attached to each hop. This was originally planned to run locally for each participant but has been moved to the analysis step. It is disabled by default but can be optionally enabled by providing the `--ipinfo_key` parameter with an API key for [ipinfo.io](https://ipinfo.io), which is used to perform the lookups.
-
-e.g. `sudo python3 main.py --connection wifi --ipinfo_key KEYHERE`
-
 #### Output
 
 Several files prefixed with `results-` will be produced all of which should be returned as part of the research.

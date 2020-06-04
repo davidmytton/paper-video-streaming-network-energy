@@ -31,7 +31,6 @@ import ssl
 import subprocess
 
 # 3rd party
-import ipinfo
 import youtube_dl
 
 # scamper needs root
@@ -41,7 +40,7 @@ if os.geteuid() != 0:
 # Parse args
 parser = argparse.ArgumentParser()
 parser.add_argument('--connection', help='Specify connected over wifi or 4g')
-parser.add_argument('--ipinfo_key', help='Specify ipinfo.io API key')
+parser.add_argument('--ipinfo_key', help='No longer used')
 args = parser.parse_args()
 
 if args.connection == 'wifi':
@@ -169,51 +168,6 @@ def runTest(video_url):
     print('---', file=outputfile)
     print('Traceroute (%s hops)' % (hops), file=outputfile)
     print('done')
-
-    # Optionally perform the ipinfo lookups from the participant run
-    if args.ipinfo_key:
-        print('Running ipinfo lookups...', end='', flush=True)
-
-        # Now output some friendly info
-        ipinfo_handler = ipinfo.getHandler(args.ipinfo_key)
-
-        # Loop through the hops and query the IP from https://ipinfo.io
-        for hop in trace['hops']:
-            ip_details = ipinfo_handler.getDetails(hop['addr'])
-            print('%s: %s (%sms)' % (hop['probe_ttl'],
-                                    hop['addr'],
-                                    hop['rtt']), file=outputfile)
-
-            if not hasattr(ip_details, 'bogon'):
-                print('- ASN:', ip_details.org, file=outputfile)
-                print('- Location: %s, %s' % (ip_details.city,
-                                            ip_details.country_name),
-                    file=outputfile)
-
-                if hasattr(ip_details, 'hostname'):
-                    hostname = ip_details.hostname
-                else:
-                    hostname = 'Unknown'
-
-                print('- Hostname:', hostname, end='\n\n', file=outputfile)
-
-        # Output the destination details
-        ip_details = ipinfo_handler.getDetails(trace['dst'])
-        print('Destination: %s (%s)' % (cdn_url.netloc,
-                                        trace['dst']), file=outputfile)
-        print('- ASN:', ip_details.org, file=outputfile)
-        print('- Location: %s, %s' % (ip_details.city,
-                                    ip_details.country_name), file=outputfile)
-
-        if hasattr(ip_details, 'hostname'):
-            hostname = ip_details.hostname
-        else:
-            hostname = 'Unknown'
-
-        print('- Hostname:', hostname, end='\n\n', file=outputfile)
-        print('done')
-
-    outputfile.close()
 
     print('Finished test')
 
