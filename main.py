@@ -62,7 +62,7 @@ def runTest(video_url):
 
     # Get the CDN URL using youtube-dl in simulation mode
     ydl = youtube_dl.YoutubeDL({'quiet': True, 
-                                'nocheckcertificate': True})
+                                'nocheckcertificate': True}) # Older macOS don't have up to date certs
 
     with ydl:
         result = ydl.extract_info(
@@ -152,57 +152,63 @@ def runTest(video_url):
     if trace['stop_reason'] == 'GAPLIMIT':
         hops = hops - 5  # If we hit the gap limit (5), subtract from the total
 
-    # Print the full traceroute
     print('done')
-    print('Running lookup on traceroute...', end='', flush=True)
 
+    # Write the results.txt basic info
+    print('Tidying results...', end='', flush=True)
     outputfile = open('results.txt', mode='a')
     print('---', file=outputfile)
     print(filename, file=outputfile)
     print('---', file=outputfile)
-    print('Traceroute (%s hops):' % (hops), file=outputfile)
-
-    # Now output some friendly info
-    ipinfo_handler = ipinfo.getHandler(args.ipinfo_key)
-
-    # Loop through the hops and query the IP from https://ipinfo.io
-    for hop in trace['hops']:
-        ip_details = ipinfo_handler.getDetails(hop['addr'])
-        print('%s: %s (%sms)' % (hop['probe_ttl'],
-                                 hop['addr'],
-                                 hop['rtt']), file=outputfile)
-
-        if not hasattr(ip_details, 'bogon'):
-            print('- ASN:', ip_details.org, file=outputfile)
-            print('- Location: %s, %s' % (ip_details.city,
-                                          ip_details.country_name),
-                  file=outputfile)
-
-            if hasattr(ip_details, 'hostname'):
-                hostname = ip_details.hostname
-            else:
-                hostname = 'Unknown'
-
-            print('- Hostname:', hostname, end='\n\n', file=outputfile)
-
-    # Output the destination details
-    ip_details = ipinfo_handler.getDetails(trace['dst'])
-    print('Destination: %s (%s)' % (cdn_url.netloc,
-                                    trace['dst']), file=outputfile)
-    print('- ASN:', ip_details.org, file=outputfile)
-    print('- Location: %s, %s' % (ip_details.city,
-                                  ip_details.country_name), file=outputfile)
-
-    if hasattr(ip_details, 'hostname'):
-        hostname = ip_details.hostname
-    else:
-        hostname = 'Unknown'
-
-    print('- Hostname:', hostname, end='\n\n', file=outputfile)
-
-    outputfile.close()
+    print('Traceroute (%s hops)' % (hops), file=outputfile)
     print('done')
 
+    # Optionally perform the ipinfo lookups from the participant run
+    if args.ipinfo_key:
+        print('Running ipinfo lookups...', end='', flush=True)
+
+        # Now output some friendly info
+        ipinfo_handler = ipinfo.getHandler(args.ipinfo_key)
+
+        # Loop through the hops and query the IP from https://ipinfo.io
+        for hop in trace['hops']:
+            ip_details = ipinfo_handler.getDetails(hop['addr'])
+            print('%s: %s (%sms)' % (hop['probe_ttl'],
+                                    hop['addr'],
+                                    hop['rtt']), file=outputfile)
+
+            if not hasattr(ip_details, 'bogon'):
+                print('- ASN:', ip_details.org, file=outputfile)
+                print('- Location: %s, %s' % (ip_details.city,
+                                            ip_details.country_name),
+                    file=outputfile)
+
+                if hasattr(ip_details, 'hostname'):
+                    hostname = ip_details.hostname
+                else:
+                    hostname = 'Unknown'
+
+                print('- Hostname:', hostname, end='\n\n', file=outputfile)
+
+        # Output the destination details
+        ip_details = ipinfo_handler.getDetails(trace['dst'])
+        print('Destination: %s (%s)' % (cdn_url.netloc,
+                                        trace['dst']), file=outputfile)
+        print('- ASN:', ip_details.org, file=outputfile)
+        print('- Location: %s, %s' % (ip_details.city,
+                                    ip_details.country_name), file=outputfile)
+
+        if hasattr(ip_details, 'hostname'):
+            hostname = ip_details.hostname
+        else:
+            hostname = 'Unknown'
+
+        print('- Hostname:', hostname, end='\n\n', file=outputfile)
+        print('done')
+
+    outputfile.close()
+
+    print('Finished test')
 
 runTest('https://www.youtube.com/watch?v=kJQP7kiw5Fk')
 runTest('https://www.instagram.com/p/B5vhf4innBN/')

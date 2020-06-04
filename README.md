@@ -49,9 +49,15 @@ The actual results from this study will be published once completed. This README
 ### Execution
 
 1. Connect your computer over Wi-Fi.
-2. Execute: `sudo python3 main.py --connection wifi --ipinfo_key KEYHERE`
+2. Execute: `sudo python3 main.py --connection wifi`
 3. Disconnect from Wi-Fi. Connect by tethering to your 4G phone.
-4. Execute: `sudo python3 main.py --connection 4g --ipinfo_key KEYHERE`
+4. Execute: `sudo python3 main.py --connection 4g`
+
+#### Optional ipinfo lookup
+
+The collector has the ability to do print the traceroute results in a human readable format with hostname, ASN and IP location lookups attached to each hop. This was originally planned to run locally for each participant but has been moved to the analysis step. It is disabled by default but can be optionally enabled by providing the `--ipinfo_key` parameter with an API key for [ipinfo.io](https://ipinfo.io), which is used to perform the lookups.
+
+e.g. `sudo python3 main.py --connection wifi --ipinfo_key KEYHERE`
 
 #### Output
 
@@ -69,7 +75,6 @@ Several files prefixed with `results-` will be produced all of which should be r
 
 * The `./scamper` binary is committed into the repo compiled on macOS 10.15.4 (19E287) from the [2020-03-12 scamper-cvs-20191102b](https://www.caida.org/tools/measurement/scamper/code/scamper-cvs-20191102b.tar.gz) release to avoid having to build a binary on a volunteer machine (or [install via homebrew](https://formulae.brew.sh/formula/scamper)).
 * The code uses [jsonip.com](https://jsonip.com) to get the current public IP so it can be redacted from the results.
-* Requests are made to [ipinfo.io](https://ipinfo.io) to retrieve ASN, hostname and country details for each IP in the traceroute. Provide your API key with the `--ipinfo_key` argument.
 * If you are using something like Little Snitch, it needs to be completely disabled whilst running the tests because it interfers with the way that scamper manipulates the firewall.
 
 ## License
