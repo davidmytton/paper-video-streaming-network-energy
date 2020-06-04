@@ -39,7 +39,9 @@ if os.geteuid() != 0:
 
 # Parse args
 parser = argparse.ArgumentParser()
-parser.add_argument('--connection', help='Specify connected over wifi or 4g')
+parser.add_argument('--connection', 
+                    help='Specify connected over wifi or 4g',
+                    required=True)
 parser.add_argument('--ipinfo_key', help='No longer used')
 args = parser.parse_args()
 
