@@ -155,22 +155,6 @@ def runTest(video_url):
 
     print('done')
 
-    print('Tidying results...', end='', flush=True)
-
-    # How many hops?
-    hops = trace['hop_count']
-
-    if trace['stop_reason'] == 'GAPLIMIT':
-        hops = hops - 5  # If we hit the gap limit (5), subtract from the total
-
-    # Write the results.txt basic info
-    outputfile = open('results.txt', mode='a')
-    print('---', file=outputfile)
-    print(filename, file=outputfile)
-    print('---', file=outputfile)
-    print('Traceroute (%s hops)' % (hops), file=outputfile)
-    print('done')
-
     print('Finished test')
 
 
