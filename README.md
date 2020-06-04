@@ -33,8 +33,10 @@ The actual results from this study will be published once completed. This README
 
 ### Requirements
 
-* macOS (tested only on 10.15).
-* Python 3.7.
+* macOS.
+  * Developed on macOS 10.15 with Python 3.7.6
+  * Some participants reported problems with certificate validation on macOS 10.12 and 10.13, which have outdated certificate repositories. [Upgrading the certificate store](https://stackoverflow.com/a/61142526) was tried but this didn't help. As such, certificate verification was disabled in the code.
+* Known working on Python 3.7 and 3.6.
 
 ### Setup
 
