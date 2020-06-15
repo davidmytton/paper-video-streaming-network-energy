@@ -68,9 +68,9 @@ The returned results files are stored pseudonymously so they can be analysed. Th
 
 e.g. `results-uk-london-15-www.instagram.com-4g.json`
 
-The [analysis script](/analyse.py) aggregates all the results files into a single CSV. For each result, nmap is run against the IP for every hop to attempt to [detect the OS](https://nmap.org/book/man-os-detection.html):
+The [analysis script](/analyse.py) aggregates all the results files into a single CSV. For each result, nmap is run against the IP for every hop to attempt to [detect the OS](https://nmap.org/book/man-os-detection.html), which requires sudo:
 
-`python3 aggregate.py --results_dir example-results/ --ipinfo_key API_KEY`
+`sudo python3 analyse.py --results_dir example-results/ --ipinfo_key API_KEY`
 
 ### Parameters
 
