@@ -78,6 +78,8 @@ The [analysis script](/analyse.py) aggregates all the results files into a singl
 
 `--ipinfo_key` = your API key for [ipinfo.io](https://ipinfo.io), used to look up information about each trace IP address.
 
+`--ipv` = the IP version of the results files, either 4 or 6. This is because of the nmap probe, which must be run on the same IP version as the probe destination i.e. if the nmap probe is IPv6, you must test from an IPv6 network. As such, the results directory should only contain results from a single IP version.
+
 ### Removal
 
 1. Execute: `deactivate`

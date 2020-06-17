@@ -22,6 +22,7 @@
 # System
 import argparse
 import csv
+import ipaddress
 import json
 import os
 
@@ -41,13 +42,20 @@ parser.add_argument('--results_dir',
 parser.add_argument('--ipinfo_key',
                     help='API key for ipinfo.io',
                     required=True)
+parser.add_argument('--ipv',
+                    help='Which version of IP to test from. Specify 4 or 6',
+                    required=True)
 args = parser.parse_args()
+
+if args.ipv != '4' and args.ipv != '6':
+    exit('Incorrect value for --ipv, must be 4 or 6')
 
 fieldnames = ['Participant ID',
               'Participant City',
               'Participant Country',
               'Connection',
               'ISP',
+              'IPv',
               'Destination',
               'Destination IP',
               'Destination Hostname',
@@ -100,6 +108,7 @@ with open('results.csv', 'w') as csvfile:
                 csv_line['Participant City'] = scamper_filename_split[2]
                 csv_line['Participant Country'] = scamper_filename_split[1]
                 csv_line['Connection'] = scamper_filename_split[5].replace('.json', '')
+                csv_line['IPv'] = args.ipv
                 csv_line['Destination'] = scamper_filename_split[4]
                 csv_line['Destination IP'] = trace['dst']
 
@@ -158,7 +167,13 @@ with open('results.csv', 'w') as csvfile:
                             print('-- %s - nmap...' % (hop['addr']))
 
                             nm = nmap.PortScanner()
-                            nm.scan(hop['addr'], arguments='-O')
+
+                            if args.ipv == '4':
+                                nmap_arguments = '-O'
+                            elif args.ipv == '6':
+                                nmap_arguments = '-O -6'
+
+                            nm.scan(hop['addr'], arguments=nmap_arguments)
                             try:
                                 if 'osmatch' in nm[hop['addr']]:
                                     csv_line['Hop ' + str(hop_number) + ' OS (nmap name)'] = nm[hop['addr']]['osmatch'][0]['name']
