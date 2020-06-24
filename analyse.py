@@ -175,7 +175,7 @@ with open('results.csv', 'w') as csvfile:
 
                             nm.scan(hop['addr'], arguments=nmap_arguments)
                             try:
-                                if 'osmatch' in nm[hop['addr']]:
+                                if 'osmatch' in nm[hop['addr']] and nm[hop['addr']]['osmatch']:
                                     csv_line['Hop ' + str(hop_number) + ' OS (nmap name)'] = nm[hop['addr']]['osmatch'][0]['name']
                                     csv_line['Hop ' + str(hop_number) + ' OS (nmap confidence)'] = nm[hop['addr']]['osmatch'][0]['accuracy']
                             except KeyError:
