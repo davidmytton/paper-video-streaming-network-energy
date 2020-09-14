@@ -1,22 +1,20 @@
 # Traceroute Collector
 
-This code packages the methodology for my [Environmental Technology MSc](https://www.imperial.ac.uk/environmental-policy/msc/) thesis at Imperial College London so that the required traceroute data can be collected from volunteers as easily as possible.
+Packaged code for the paper: `The network architecture of internet video streaming services: data collection software and traceroute samples`.
 
-The code used in this project can be [found on GitHub](https://github.com/davidmytton/traceroute-collector).
+## Abstract
 
-## Study
+Global electricity demand is ~20,000TWh, of which ~2,000TWh is used by IT devices, networks, and data centres. Video streaming workloads make up 60% of global internet traffic, 65% on mobile. It is therefore important to understand how much energy is being consumed. Building an accurate energy model requires correctly mapping the network architecture of video internet streaming over both Wi-Fi and 4G. In this paper, we present a methodology and associated custom software to involve human participants in simulating YouTube and Instagram internet video streaming workloads. We include 116 traceroute samples in standardised, machine-readable format collected from 29 participants which can be used for further analysis of internet video streaming workloads, and other generalised internet applications.
 
-### Goal
-
-The goal of this study is to estimate the energy intensity of internet data transfer and discover how it differs when connecting over Wi-Fi and 4G. The study will examine the network routing for video streaming workloads when connected via Wi-Fi and 4G from different countries. The network traceroute will be used to determine the underlying network equipment architecture for each network type and country. The energy requirements for the network will then be calculated based on equipment characteristics for each workload to provide a range of energy estimates for each workload scenario.
+The code can be [found on GitHub](https://github.com/davidmytton/traceroute-collector).
 
 ### Methodology
 
-1. Participants who are willing to run a network trace on their personal computer will be recruited from multiple countries. We will need at least 10 participants but are not setting an upper limit.
+1. Participants who are willing to run a network trace on their personal computer will be recruited from multiple countries
 2. YouTube, Netflix, Facebook Video and Instagram make up a majority of all internet and mobile traffic (Sandvine, [2019](https://www.sandvine.com/global-internet-phenomena-report-2019), [2020](https://www.sandvine.com/download-report-mobile-internet-phenomena-report-2020-sandvine)). These will be used as the destinations for the traceroutes. They use sophisticated mechanisms to ensure the best user experience which means the network destination can change for every user ([Adhikari et al., 2012](https://doi.org/10.1109/INFCOM.2012.6195644); [Juluri et al., 2013](https://ieeexplore.ieee.org/document/6573037); [Loh et al., 2019](https://doi.org/10.1145/3304109.3325819); [Nguyen, Fourmaux & Deleuze, 2019](https://doi.org/10.1007/978-3-030-14413-5_13)). The correct destination will be detected using the open source [`youtube-dl`](https://ytdl-org.github.io/youtube-dl/index.html ) running in simulation mode to reveal the destination URL but not download content. `youtube-dl` supports other sites, not just YouTube.
 3. Traces will be collected using [Scamper](https://www.caida.org/tools/measurement/scamper/), an open source implementation of [Paris traceroute](https://paris-traceroute.net ) designed for academic research ([Luckie, 2010](https://doi.org/10.1145/1879141.1879171)). *Paris traceroute* deals with the inability of `traceroute` to handle load balancing ([Augustin, Friedman & Teixeira, 2007](https://doi.org/10.1109/E2EMON.2007.375313)). Detecting accurate routing is important to record the correct hops. No personal information will be collected; the source IP will be removed.
-4. Steps 2-3 have been implemented in this Python wrapper so the participant can run a command to collect the data, once over Wi-Fi and once tethered over 4G. No content is downloaded and a traceroute uses a tiny amount of data, so this will not affect 4G data caps. The participant will return the results to via e-mail to david.mytton19@imperial.ac.uk.
-5. Using the traceroutes, the network equipment will be researched from survey data of commonly deployed equipment available from the Uptime Institute. This will be validated by using `nmap` to detect the system running on each traceroute network hop, and through correspondence with industry contacts.
+4. Steps 2-3 have been implemented in this Python wrapper so the participant can run a command to collect the data, once over Wi-Fi and once tethered over 4G. No content is downloaded and a traceroute uses a tiny amount of data, so this will not affect 4G data caps. The participant will return the results to the researchers via email.
+5. Using the traceroutes, the network equipment will be researched from survey data of commonly deployed equipment available from the Uptime Institute.
 6. A model will be constructed to determine the energy usage. Further details to be added later.
 
 ### Content
@@ -64,9 +62,9 @@ Several files prefixed with `results-` will be produced all of which should be r
 
 The returned results files are stored pseudonymously so they can be analysed. The files are expected to use following naming convention:
 
-`results-COUNTRY-CITY-PARTICIPANT_ID-DESTINATION-CONNECTION.json`
+`results-COUNTRY-CITY-DESTINATION-CONNECTION.json`
 
-e.g. `results-uk-london-15-www.instagram.com-4g.json`
+e.g. `results-uk-london-www.instagram.com-4g.json`
 
 The [analysis script](/analyse.py) aggregates all the results files into a single CSV. For each result, nmap is run against the IP for every hop to attempt to [detect the OS](https://nmap.org/book/man-os-detection.html), which requires sudo:
 
@@ -77,8 +75,6 @@ The [analysis script](/analyse.py) aggregates all the results files into a singl
 `--results_dir` = the directory that contains all the Scamper results JSON files.
 
 `--ipinfo_key` = your API key for [ipinfo.io](https://ipinfo.io), used to look up information about each trace IP address.
-
-`--ipv` = the IP version of the results files, either 4 or 6. This is because of the nmap probe, which must be run on the same IP version as the probe destination i.e. if the nmap probe is IPv6, you must test from an IPv6 network. As such, the results directory should only contain results from a single IP version.
 
 ### Removal
 
