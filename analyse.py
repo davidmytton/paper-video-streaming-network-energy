@@ -28,6 +28,7 @@
 # System
 import argparse
 import csv
+import ipaddress
 import json
 import os
 
@@ -44,8 +45,7 @@ parser.add_argument('--ipinfo_key',
                     required=True)
 args = parser.parse_args()
 
-fieldnames = ['Participant ID',
-              'Participant City',
+fieldnames = ['Participant City',
               'Participant Country',
               'Connection',
               'ISP',
@@ -118,14 +118,15 @@ with open('results.csv', 'w') as csvfile:
                 # Separate components
                 scamper_filename_split = scamper_filename.split('-')
 
-                csv_line['Participant ID'] = scamper_filename_split[3]
                 csv_line['Participant City'] = scamper_filename_split[2]
                 csv_line['Participant Country'] = scamper_filename_split[1]
-                csv_line['Connection'] = scamper_filename_split[5].replace(
+                csv_line['Connection'] = scamper_filename_split[4].replace(
                     '.json', '')
-                csv_line['IPv'] = args.ipv
-                csv_line['Destination'] = scamper_filename_split[4]
+                csv_line['Destination'] = scamper_filename_split[3]
                 csv_line['Destination IP'] = trace['dst']
+
+                ip = ipaddress.ip_address(trace['dst'])
+                csv_line['IPv'] = ip.version
 
                 print('- destination...')
 
