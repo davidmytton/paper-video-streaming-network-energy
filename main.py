@@ -1,8 +1,13 @@
 # Traceroute Collector
 #
-# This code packages the methodology for my Environmental Technology MSc
-# thesis at Imperial College London so that the required traceroute data
-# can be collected from volunteers as easily as possible.
+# This code packages the methodology for the paper "Network architecture of
+# internet video streaming over Wi-Fi and 4G - collection software and
+# traceroute samples".
+#
+# See paper or GitHub for the correct citation.
+#
+# See https://github.com/davidmytton/traceroute-collector for the source and
+# latest releases.
 #
 # Copyright (C) 2020 David Mytton <david@davidmytton.co.uk>
 # This program is free software; you can redistribute it and/or modify
@@ -63,8 +68,10 @@ def runTest(video_url):
     print('Discovering CDN URL...', end='', flush=True)
 
     # Get the CDN URL using youtube-dl in simulation mode
+    # nocheckcertificate because older macOS releases don't have up to date
+    # certs
     ydl = youtube_dl.YoutubeDL({'quiet': True,
-                                'nocheckcertificate': True})  # Older macOS don't have up to date certs
+                                'nocheckcertificate': True})
 
     with ydl:
         result = ydl.extract_info(
