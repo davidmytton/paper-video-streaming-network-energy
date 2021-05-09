@@ -1,6 +1,6 @@
 # Traceroute Collector
 
-Packaged code for the paper: `The network energy intensity of video streaming 
+Packaged code for the paper: `The network energy intensity of video streaming
 over Wi-Fi and 4G`.
 
 ## Methods
@@ -8,8 +8,8 @@ over Wi-Fi and 4G`.
 1. Adverts were sent using convenience sampling to several groups the
    researchers were part of – the Imperial College London Environmental
    Technology MSc 2019-2020 cohort, a private UK Chief Technology Officer user
-   group (https://www.bartechcto.net), the Power Swarm network
-   (http://powerswarm.co.uk), the ClimateAction.tech newsletter, Twitter, and
+   group (<https://www.bartechcto.net>), the Power Swarm network
+   (<http://powerswarm.co.uk>), the ClimateAction.tech newsletter, Twitter, and
    personal contacts. Applicants were required to meet eligibility criteria:
    over 18, fluent English speakers, able to access the internet over Wi-Fi and
    4G with a macOS computer not using a VPN. Volunteers were asked to apply
