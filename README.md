@@ -30,6 +30,8 @@ with the correct citation.
 
 This repo contains the following materials:
 
+* [**Model:**](/model/) Jupyter notebook containing the calculations and energy
+  model.
 * [**Traceroute collector:**](/traceroute-collector/) The code used to collect
   traceroute samples from participants.
 
