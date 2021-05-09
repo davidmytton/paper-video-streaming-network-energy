@@ -1,23 +1,7 @@
 # Traceroute Collector
 
-Packaged code for the paper: `Network architecture of internet video streaming
-over Wi-Fi and 4G - collection software and traceroute samples`.
-
-## Abstract
-
-The internet consists of multiple interlinked networks, and major video
-streaming providers use sophisticated Content Delivery Networks to ensure data
-are located closer to users. This can mean each user has a different network
-path connecting their device to the content they wish to watch, which makes
-mapping the network architecture difficult.  In this paper, we present a
-methodology and software implementation to simulate YouTube and Instagram
-internet video streaming workloads via human participants. We include 116
-traceroute samples in standardised, machine-readable format collected from 29
-participants using this methodology which can be used for analysis of internet
-workloads, such as video streaming and media content distribution.
-
-The code can be [found on
-GitHub](https://github.com/davidmytton/traceroute-collector).
+Packaged code for the paper: `The network energy intensity of video streaming 
+over Wi-Fi and 4G`.
 
 ## Methods
 
@@ -61,7 +45,7 @@ Netflix and Facebook require accounts to log in so will be excluded.
 ## Results
 
 The results will be published with a link to the relevant paper [on
-GitHub](https://github.com/davidmytton/traceroute-collector).
+GitHub](https://github.com/davidmytton/paper-video-streaming-network-energy).
 
 ## Usage Instructions
 

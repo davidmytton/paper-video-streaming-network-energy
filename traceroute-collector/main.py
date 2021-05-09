@@ -1,14 +1,10 @@
 # Traceroute Collector
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
-# This code packages the methodology for the paper "Network architecture of
-# internet video streaming over Wi-Fi and 4G - collection software and
-# traceroute samples".
+# This code packages the methodology for the paper 
+# "The network energy intensity of video streaming over Wi-Fi and 4G".
 #
-# See paper or GitHub for the correct citation.
-#
-# See https://github.com/davidmytton/traceroute-collector for the source and
-# latest releases.
+# https://github.com/davidmytton/paper-video-streaming-network-energy
 #
 # Copyright (C) 2020 David Mytton <david@davidmytton.co.uk>
 # This program is free software: you can redistribute it and/or modify
