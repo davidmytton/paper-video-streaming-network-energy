@@ -128,7 +128,7 @@ up information about each trace IP address.
 
 ## License
 
-All the code in this repo is licensed under
+All the code in this directory is licensed under
 [GPLv3](https://www.gnu.org/licenses/gpl-3.0.txt).
 
 Scamper is provided in a unmodified, compiled binary executable as part of this
@@ -136,6 +136,5 @@ project. It is licensed under
 [GPLv2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html) and the
 original code that was compiled is available from the [2020-03-12
 scamper-cvs-20191102b](https://www.caida.org/tools/measurement/scamper/code/scamper-cvs-20191102b.tar.gz)
-release, included in this repo as
-[`scamper-cvs-20191102b.tar.gz`](/scamper-cvs-20191102b.tar.gz) for archive
-purposes.
+release, archived in this repo as
+[`scamper-cvs-20191102b.tar.gz`](/scamper-cvs-20191102b.tar.gz).
