@@ -1,0 +1,68 @@
+{
+    "type": "trace",
+    "version": "0.1",
+    "userid": 0,
+    "method": "udp-paris",
+    "src": "172.20.10.3",
+    "dst": "173.194.139.10",
+    "sport": 39601,
+    "dport": 33435,
+    "stop_reason": "GAPLIMIT",
+    "stop_data": 0,
+    "start": {
+        "sec": 1592257374,
+        "usec": 669227,
+        "ftime": "2020-06-15 22:42:54"
+    },
+    "hop_count": 8,
+    "attempts": 2,
+    "hoplimit": 0,
+    "firsthop": 1,
+    "wait": 5,
+    "wait_probe": 0,
+    "tos": 0,
+    "probe_size": 44,
+    "probe_count": 14,
+    "hops": [
+        {
+            "addr": "172.20.10.1",
+            "probe_ttl": 1,
+            "probe_id": 1,
+            "probe_size": 44,
+            "tx": {
+                "sec": 1592257374,
+                "usec": 669588
+            },
+            "rtt": 117.672,
+            "reply_ttl": 64,
+            "reply_tos": 0,
+            "reply_size": 56,
+            "reply_ipid": 58756,
+            "icmp_type": 11,
+            "icmp_code": 0,
+            "icmp_q_ttl": 1,
+            "icmp_q_ipl": 44,
+            "icmp_q_tos": 0
+        },
+        {
+            "addr": "172.19.70.1",
+            "probe_ttl": 3,
+            "probe_id": 1,
+            "probe_size": 44,
+            "tx": {
+                "sec": 1592257384,
+                "usec": 791903
+            },
+            "rtt": 35.526,
+            "reply_ttl": 63,
+            "reply_tos": 0,
+            "reply_size": 56,
+            "reply_ipid": 46228,
+            "icmp_type": 11,
+            "icmp_code": 0,
+            "icmp_q_ttl": 1,
+            "icmp_q_ipl": 44,
+            "icmp_q_tos": 0
+        }
+    ]
+}

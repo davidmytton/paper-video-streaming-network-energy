@@ -33,7 +33,9 @@ This repo contains the following materials:
 * [**Model:**](/model/) Jupyter notebook containing the calculations and energy
   model.
 * [**Traceroute collector:**](/traceroute-collector/) The code used to collect
-  traceroute samples from participants.
+  Scamper traceroute samples from participants.
+* [**Traceroute samples:**](/traceroute-samples/) The traceroute samples in 
+  Scamper JSON and aggregated into a single CSV for analysis in the model.
 
 ## License
 

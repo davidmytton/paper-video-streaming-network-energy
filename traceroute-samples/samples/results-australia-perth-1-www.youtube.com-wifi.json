@@ -1,0 +1,85 @@
+{
+    "type": "trace",
+    "version": "0.1",
+    "userid": 0,
+    "method": "udp-paris",
+    "src": "REDACTED",
+    "dst": "2406:3400:0:2::c",
+    "sport": 42124,
+    "dport": 33435,
+    "stop_reason": "GAPLIMIT",
+    "stop_data": 0,
+    "start": {
+        "sec": 1592114975,
+        "usec": 854423,
+        "ftime": "2020-06-14 14:09:35"
+    },
+    "hop_count": 9,
+    "attempts": 2,
+    "hoplimit": 0,
+    "firsthop": 1,
+    "wait": 5,
+    "wait_probe": 0,
+    "tos": 0,
+    "probe_size": 60,
+    "probe_count": 15,
+    "hops": [
+        {
+            "addr": "2406:3400:600:68:fdd7:dced:c5f1:392a",
+            "probe_ttl": 1,
+            "probe_id": 1,
+            "probe_size": 60,
+            "tx": {
+                "sec": 1592114975,
+                "usec": 854551
+            },
+            "rtt": 2.435,
+            "reply_ttl": 0,
+            "reply_tos": 0,
+            "reply_size": 108,
+            "reply_ipid": 0,
+            "icmp_type": 3,
+            "icmp_code": 0,
+            "icmp_q_ttl": 1,
+            "icmp_q_ipl": 60
+        },
+        {
+            "addr": "2406:3400:80:11::1",
+            "probe_ttl": 2,
+            "probe_id": 1,
+            "probe_size": 60,
+            "tx": {
+                "sec": 1592114975,
+                "usec": 904430
+            },
+            "rtt": 17.444,
+            "reply_ttl": 0,
+            "reply_tos": 0,
+            "reply_size": 108,
+            "reply_ipid": 0,
+            "icmp_type": 3,
+            "icmp_code": 0,
+            "icmp_q_ttl": 1,
+            "icmp_q_ipl": 60
+        },
+        {
+            "addr": "2406:3400:0:3::2",
+            "probe_ttl": 4,
+            "probe_id": 1,
+            "probe_size": 60,
+            "tx": {
+                "sec": 1592114985,
+                "usec": 960012
+            },
+            "rtt": 65.481,
+            "reply_ttl": 0,
+            "reply_tos": 0,
+            "reply_size": 108,
+            "reply_ipid": 0,
+            "icmp_type": 3,
+            "icmp_code": 0,
+            "icmp_q_ttl": 1,
+            "icmp_q_ipl": 60
+        }
+    ]
+}

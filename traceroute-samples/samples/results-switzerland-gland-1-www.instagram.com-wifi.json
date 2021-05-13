@@ -1,0 +1,26 @@
+{
+    "type": "trace",
+    "version": "0.1",
+    "userid": 0,
+    "method": "udp-paris",
+    "src": "REDACTED",
+    "dst": "2001:918:ff44:100:face:b00c:3333:a3f",
+    "sport": 49457,
+    "dport": 33435,
+    "stop_reason": "ERROR",
+    "stop_data": 49,
+    "start": {
+        "sec": 1591212209,
+        "usec": 954507,
+        "ftime": "2020-06-03 21:23:29"
+    },
+    "hop_count": 0,
+    "attempts": 2,
+    "hoplimit": 0,
+    "firsthop": 1,
+    "wait": 5,
+    "wait_probe": 0,
+    "tos": 0,
+    "probe_size": 60,
+    "probe_count": 0
+}

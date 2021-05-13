@@ -1,2 +1,1 @@
-ipinfo==3.0.0
-youtube-dl
+youtube-dl # Not pinned because it is regularly updated for parsing YouTube

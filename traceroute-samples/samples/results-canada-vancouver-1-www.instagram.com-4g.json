@@ -1,0 +1,228 @@
+{
+    "type": "trace",
+    "version": "0.1",
+    "userid": 0,
+    "method": "udp-paris",
+    "src": "192.168.43.45",
+    "dst": "209.52.156.161",
+    "sport": 50457,
+    "dport": 33435,
+    "stop_reason": "GAPLIMIT",
+    "stop_data": 0,
+    "start": {
+        "sec": 1591279183,
+        "usec": 261713,
+        "ftime": "2020-06-04 06:59:43"
+    },
+    "hop_count": 15,
+    "attempts": 2,
+    "hoplimit": 0,
+    "firsthop": 1,
+    "wait": 5,
+    "wait_probe": 0,
+    "tos": 0,
+    "probe_size": 44,
+    "probe_count": 21,
+    "hops": [
+        {
+            "addr": "192.168.43.61",
+            "probe_ttl": 1,
+            "probe_id": 1,
+            "probe_size": 44,
+            "tx": {
+                "sec": 1591279183,
+                "usec": 262081
+            },
+            "rtt": 4.014,
+            "reply_ttl": 64,
+            "reply_tos": 192,
+            "reply_size": 72,
+            "reply_ipid": 62467,
+            "icmp_type": 11,
+            "icmp_code": 0,
+            "icmp_q_ttl": 1,
+            "icmp_q_ipl": 44,
+            "icmp_q_tos": 0
+        },
+        {
+            "addr": "96.1.138.45",
+            "probe_ttl": 2,
+            "probe_id": 1,
+            "probe_size": 44,
+            "tx": {
+                "sec": 1591279183,
+                "usec": 266798
+            },
+            "rtt": 50.493,
+            "reply_ttl": 254,
+            "reply_tos": 0,
+            "reply_size": 56,
+            "reply_ipid": 2,
+            "icmp_type": 11,
+            "icmp_code": 0,
+            "icmp_q_ttl": 1,
+            "icmp_q_ipl": 44,
+            "icmp_q_tos": 40
+        },
+        {
+            "addr": "10.191.15.240",
+            "probe_ttl": 3,
+            "probe_id": 1,
+            "probe_size": 44,
+            "tx": {
+                "sec": 1591279183,
+                "usec": 320820
+            },
+            "rtt": 20.315,
+            "reply_ttl": 252,
+            "reply_tos": 40,
+            "reply_size": 56,
+            "reply_ipid": 0,
+            "icmp_type": 11,
+            "icmp_code": 0,
+            "icmp_q_ttl": 1,
+            "icmp_q_ipl": 44,
+            "icmp_q_tos": 40
+        },
+        {
+            "addr": "10.191.15.163",
+            "probe_ttl": 4,
+            "probe_id": 1,
+            "probe_size": 44,
+            "tx": {
+                "sec": 1591279183,
+                "usec": 348474
+            },
+            "rtt": 16.768,
+            "reply_ttl": 251,
+            "reply_tos": 0,
+            "reply_size": 56,
+            "reply_ipid": 53429,
+            "icmp_type": 11,
+            "icmp_code": 0,
+            "icmp_q_ttl": 1,
+            "icmp_q_ipl": 44,
+            "icmp_q_tos": 40
+        },
+        {
+            "addr": "10.191.219.82",
+            "probe_ttl": 5,
+            "probe_id": 1,
+            "probe_size": 44,
+            "tx": {
+                "sec": 1591279183,
+                "usec": 402377
+            },
+            "rtt": 21.528,
+            "reply_ttl": 250,
+            "reply_tos": 0,
+            "reply_size": 56,
+            "reply_ipid": 53528,
+            "icmp_type": 11,
+            "icmp_code": 0,
+            "icmp_q_ttl": 1,
+            "icmp_q_ipl": 44,
+            "icmp_q_tos": 40
+        },
+        {
+            "addr": "10.191.253.132",
+            "probe_ttl": 6,
+            "probe_id": 1,
+            "probe_size": 44,
+            "tx": {
+                "sec": 1591279183,
+                "usec": 450819
+            },
+            "rtt": 19.231,
+            "reply_ttl": 248,
+            "reply_tos": 0,
+            "reply_size": 56,
+            "reply_ipid": 53605,
+            "icmp_type": 11,
+            "icmp_code": 0,
+            "icmp_q_ttl": 1,
+            "icmp_q_ipl": 44,
+            "icmp_q_tos": 40
+        },
+        {
+            "addr": "173.182.212.167",
+            "probe_ttl": 7,
+            "probe_id": 1,
+            "probe_size": 44,
+            "tx": {
+                "sec": 1591279183,
+                "usec": 501522
+            },
+            "rtt": 31.901,
+            "reply_ttl": 56,
+            "reply_tos": 0,
+            "reply_size": 56,
+            "reply_ipid": 53737,
+            "icmp_type": 11,
+            "icmp_code": 0,
+            "icmp_q_ttl": 1,
+            "icmp_q_ipl": 44,
+            "icmp_q_tos": 40
+        },
+        {
+            "addr": "96.1.216.227",
+            "probe_ttl": 8,
+            "probe_id": 1,
+            "probe_size": 44,
+            "tx": {
+                "sec": 1591279183,
+                "usec": 549602
+            },
+            "rtt": 36.521,
+            "reply_ttl": 52,
+            "reply_tos": 0,
+            "reply_size": 56,
+            "reply_ipid": 53820,
+            "icmp_type": 11,
+            "icmp_code": 0,
+            "icmp_q_ttl": 1,
+            "icmp_q_ipl": 44,
+            "icmp_q_tos": 0
+        },
+        {
+            "addr": "209.52.143.229",
+            "probe_ttl": 9,
+            "probe_id": 1,
+            "probe_size": 44,
+            "tx": {
+                "sec": 1591279183,
+                "usec": 599789
+            },
+            "rtt": 22.704,
+            "reply_ttl": 54,
+            "reply_tos": 0,
+            "reply_size": 56,
+            "reply_ipid": 53885,
+            "icmp_type": 11,
+            "icmp_code": 0,
+            "icmp_q_ttl": 1,
+            "icmp_q_ipl": 44,
+            "icmp_q_tos": 0
+        },
+        {
+            "addr": "209.52.143.229",
+            "probe_ttl": 10,
+            "probe_id": 2,
+            "probe_size": 44,
+            "tx": {
+                "sec": 1591279188,
+                "usec": 651335
+            },
+            "rtt": 20.69,
+            "reply_ttl": 54,
+            "reply_tos": 0,
+            "reply_size": 56,
+            "reply_ipid": 1319,
+            "icmp_type": 11,
+            "icmp_code": 0,
+            "icmp_q_ttl": 1,
+            "icmp_q_ipl": 44,
+            "icmp_q_tos": 0
+        }
+    ]
+}

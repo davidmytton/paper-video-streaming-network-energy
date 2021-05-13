@@ -1,0 +1,119 @@
+{
+    "type": "trace",
+    "version": "0.1",
+    "userid": 0,
+    "method": "udp-paris",
+    "src": "REDACTED",
+    "dst": "2406:3400:282:1:face:b00c:3333:a3f",
+    "sport": 42149,
+    "dport": 33435,
+    "stop_reason": "GAPLIMIT",
+    "stop_data": 0,
+    "start": {
+        "sec": 1592115038,
+        "usec": 923361,
+        "ftime": "2020-06-14 14:10:38"
+    },
+    "hop_count": 10,
+    "attempts": 2,
+    "hoplimit": 0,
+    "firsthop": 1,
+    "wait": 5,
+    "wait_probe": 0,
+    "tos": 0,
+    "probe_size": 60,
+    "probe_count": 16,
+    "hops": [
+        {
+            "addr": "2406:3400:600:68:fdd7:dced:c5f1:392a",
+            "probe_ttl": 1,
+            "probe_id": 1,
+            "probe_size": 60,
+            "tx": {
+                "sec": 1592115038,
+                "usec": 923756
+            },
+            "rtt": 3.619,
+            "reply_ttl": 0,
+            "reply_tos": 0,
+            "reply_size": 108,
+            "reply_ipid": 0,
+            "icmp_type": 3,
+            "icmp_code": 0,
+            "icmp_q_ttl": 1,
+            "icmp_q_ipl": 60
+        },
+        {
+            "addr": "2406:3400:80:11::1",
+            "probe_ttl": 2,
+            "probe_id": 1,
+            "probe_size": 60,
+            "tx": {
+                "sec": 1592115038,
+                "usec": 974792
+            },
+            "rtt": 17.178,
+            "reply_ttl": 0,
+            "reply_tos": 0,
+            "reply_size": 108,
+            "reply_ipid": 0,
+            "icmp_type": 3,
+            "icmp_code": 0,
+            "icmp_q_ttl": 1,
+            "icmp_q_ipl": 60
+        },
+        {
+            "addr": "2406:3400:0:3::2",
+            "probe_ttl": 4,
+            "probe_id": 1,
+            "probe_size": 60,
+            "tx": {
+                "sec": 1592115049,
+                "usec": 25299
+            },
+            "rtt": 66.276,
+            "reply_ttl": 0,
+            "reply_tos": 0,
+            "reply_size": 188,
+            "reply_ipid": 0,
+            "icmp_type": 3,
+            "icmp_code": 0,
+            "icmp_q_ttl": 2,
+            "icmp_q_ipl": 60,
+            "icmpext": [
+                {
+                    "ie_cn": 1,
+                    "ie_ct": 1,
+                    "ie_dl": 4,
+                    "mpls_labels": [
+                        {
+                            "mpls_ttl": 1,
+                            "mpls_s": 1,
+                            "mpls_exp": 0,
+                            "mpls_label": 140471
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "addr": "2406:3400:280:1::2",
+            "probe_ttl": 5,
+            "probe_id": 1,
+            "probe_size": 60,
+            "tx": {
+                "sec": 1592115049,
+                "usec": 91687
+            },
+            "rtt": 60.498,
+            "reply_ttl": 0,
+            "reply_tos": 0,
+            "reply_size": 108,
+            "reply_ipid": 0,
+            "icmp_type": 3,
+            "icmp_code": 0,
+            "icmp_q_ttl": 1,
+            "icmp_q_ipl": 60
+        }
+    ]
+}
