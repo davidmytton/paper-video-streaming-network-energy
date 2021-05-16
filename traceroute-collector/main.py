@@ -1,7 +1,7 @@
 # Traceroute Collector
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
-# This code packages the methodology for the paper 
+# This code packages the methodology for the paper
 # "The network energy intensity of video streaming over Wi-Fi and 4G".
 #
 # https://github.com/davidmytton/paper-video-streaming-network-energy

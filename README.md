@@ -34,7 +34,7 @@ This repo contains the following materials:
   model.
 * [**Traceroute collector:**](/traceroute-collector/) The code used to collect
   Scamper traceroute samples from participants.
-* [**Traceroute samples:**](/traceroute-samples/) The traceroute samples in 
+* [**Traceroute samples:**](/traceroute-samples/) The traceroute samples in
   Scamper JSON and aggregated into a single CSV for analysis in the model.
 
 ## License
