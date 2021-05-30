@@ -15,12 +15,12 @@ London, SW7 1NE, UK.
 > updated figures for the energy consumption of different sections of the
 > internet by using observations from volunteers of home internet routing over
 > Wi-Fi and 4G connections, then use survey and industry estimates to calculate
-> the network energy intensity of video streaming. We estimate 39.2bn hours of
-> video were streamed in the UK in 2019 generating 76.2 EB of data and
-> consuming a total of 4.2 TWh of electricity, or 1.3% of total electricity
-> generation. By connection type, energy consumption was split 1.1 TWh over 4G
-> and 3.1 TWh over Wi-Fi. Video streaming over 4G is twice as energy intensive
-> per streaming hour (0.210 kWh/hr) compared to Wi-Fi (0.091 kWh/hr).
+> the network energy intensity of video streaming. We estimate 39bn hours of
+> video were streamed in the UK in 2019 generating 76 EB of data and consuming
+> a total of 4.2 TWh of electricity, or 1.3% of total electricity generation.
+> By connection type, energy consumption was split 1.1 TWh over 4G and 3.1 TWh
+> over Wi-Fi. Video streaming over 4G is twice as energy intensive per
+> streaming hour (0.211 kWh/hr) compared to Wi-Fi (0.091 kWh/hr).
 
 ## Citation
 
