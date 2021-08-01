@@ -9,18 +9,19 @@ London, SW7 1NE, UK.
 
 ## Summary
 
-> Between 2010-2018 internet traffic grew ten-fold and is expected to double
-> again by 2022. With video streaming making up 60% of that traffic, 65% on
-> mobile, it is important to understand its energy consumption. Here we provide
-> updated figures for the energy consumption of different sections of the
-> internet by using observations from volunteers of home internet routing over
-> Wi-Fi and 4G connections, then use survey and industry estimates to calculate
-> the network energy intensity of video streaming. We estimate 39bn hours of
-> video were streamed in the UK in 2019 generating 76 EB of data and consuming
-> a total of 4.2 TWh of electricity, or 1.3% of total electricity generation.
-> By connection type, energy consumption was split 1.1 TWh over 4G and 3.1 TWh
-> over Wi-Fi. Video streaming over 4G is twice as energy intensive per
-> streaming hour (0.211 kWh/hr) compared to Wi-Fi (0.091 kWh/hr).
+> By 2023 5.3 billion people are expected to be able to access the internet, up
+> from 3.9 billion in 2015. Frequent internet usage involves video streaming,
+> which makes up 60% of all internet traffic, 65% on mobile. In this paper we
+> calculate the energy consumption of video streaming over Wi-Fi and 4G
+> connections. We analyze traceroute data collected from volunteers to reveal
+> the underlying network architecture. We use this data to provide updated
+> figures for the energy intensity of the different sections of the internet,
+> then use industry data to derive the network energy consumption of video
+> streaming. We estimate 39bn hours of video were streamed in the UK in 2019
+> generating 76 EB of data and consuming a total of 4.2 TWh of electricity, or
+> 1.3% of total electricity generation. Video streaming over 4G is twice as
+> energy intensive per streaming hour (0.211 kWh/hr) compared to Wi-Fi (0.091
+> kWh/hr).
 
 ## Citation
 
