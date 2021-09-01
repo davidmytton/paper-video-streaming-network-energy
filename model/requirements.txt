@@ -2,4 +2,4 @@ kaleido==0.2.1
 orca==1.6
 pandas>=1.2.5
 pint==0.17
-plotly==5.1.0
+plotly==5.3.1
