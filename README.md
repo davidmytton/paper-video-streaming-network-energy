@@ -26,6 +26,8 @@ This repo contains the following materials:
   Scamper traceroute samples from participants.
 * [**Traceroute samples:**](/traceroute-samples/) The traceroute samples in
   Scamper JSON and aggregated into a single CSV for analysis in the model.
+* [**Figure Generation:**](visualise-figures.r) The R code to generate the final 
+  figures in PDF.
 
 ## License
 
